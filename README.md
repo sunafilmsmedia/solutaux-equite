@@ -1,4 +1,4 @@
-# SoluTaux — Combien d'argent puis-je aller chercher sur ma maison pour payer mes dettes?
+# SoluTaux — Combien puis-je aller chercher sur ma maison pour payer mes dettes?
 
 Questionnaire de 9 questions pour un courtier hypothécaire. Le visiteur répond, l'app estime
 l'équité disponible sur sa propriété et de combien il pourrait réduire ses paiements, puis

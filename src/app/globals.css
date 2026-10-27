@@ -36,12 +36,13 @@ body {
     @apply animate-gradientMove;
   }
 
-  /* Mot vedette "aller chercher" — texturé (Grained Regular) */
+  /* Mot vedette "aller chercher" — texturé (Grained Regular), net, sans glow */
   .neon-word {
     font-family: "Grained", serif;
     font-weight: 400;
+    letter-spacing: 0.01em;
     color: var(--neon);
-    text-shadow: 0 0 10px rgba(185, 28, 28, 0.4), 0 0 24px rgba(185, 28, 28, 0.2);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
   }
 
   /* Curseur (Q3 valeur de propriété, Q4 solde hypothécaire, Q5 marge). */

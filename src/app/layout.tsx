@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Combien d'argent puis-je aller chercher sur ma maison pour payer mes dettes? — SoluTaux",
+  title: "Combien puis-je aller chercher sur ma maison pour payer mes dettes? — SoluTaux",
   description:
     "Découvre en 2 minutes combien d'équité tu pourrais aller chercher sur ta maison pour régler tes dettes, et de combien tu pourrais réduire tes paiements.",
 };

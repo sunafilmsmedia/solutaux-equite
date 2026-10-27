@@ -21,7 +21,7 @@ export default function LandingPage() {
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            Combien d&apos;argent puis-je{" "}
+            Combien puis-je{" "}
             <span className="neon-word inline-block pr-1 align-baseline text-[1.15em] leading-none">
               aller chercher
             </span>{" "}
