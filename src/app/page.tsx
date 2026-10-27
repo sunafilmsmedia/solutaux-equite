@@ -5,19 +5,11 @@ import { calculatorConfig } from "@/lib/config";
 export default function LandingPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-[#0a1530] to-black text-white">
-      {/* En-tête : logo SoluTaux à gauche, affiliation Multi-Prêts à droite */}
-      <header className="mx-auto flex max-w-[1280px] items-center justify-between px-6 pt-8">
+      {/* En-tête avec logo */}
+      <header className="mx-auto flex max-w-[1280px] justify-center px-6 pt-8 lg:justify-start">
         <span className="inline-flex">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="SoluTaux" className="h-9 w-auto sm:h-12" />
-        </span>
-        <span className="inline-flex items-center rounded-xl bg-white px-2.5 py-1.5 sm:px-3 sm:py-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo-multiprets.png"
-            alt="Multi-Prêts Hypothèques — cabinet de courtage hypothécaire"
-            className="h-6 w-auto sm:h-8"
-          />
+          <img src="/logo.png" alt="SoluTaux" className="h-12 w-auto" />
         </span>
       </header>
 
