@@ -4,14 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
-@font-face {
-  font-family: "Grained";
-  src: url("/fonts/Grained-Demo.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --ink: #050b18;
   --neon: #b91c1c;
@@ -36,11 +28,8 @@ body {
     @apply animate-gradientMove;
   }
 
-  /* Mot vedette "aller chercher" — texturé (Grained Regular), net, sans glow */
+  /* Mot vedette "aller chercher" — même police que le reste, rouge, sans glow */
   .neon-word {
-    font-family: "Grained", serif;
-    font-weight: 400;
-    letter-spacing: 0.01em;
     color: var(--neon);
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
   }

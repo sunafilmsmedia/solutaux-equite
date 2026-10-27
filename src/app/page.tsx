@@ -22,9 +22,7 @@ export default function LandingPage() {
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
             Combien puis-je{" "}
-            <span className="neon-word inline-block pr-1 align-baseline text-[1.15em] leading-none">
-              aller chercher
-            </span>{" "}
+            <span className="neon-word">aller chercher</span>{" "}
             sur ma maison pour payer mes dettes?
           </h1>
 
@@ -49,13 +47,13 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Coordonnées en bas, comme une landing page normale */}
-      <div className="relative z-10 mx-auto max-w-2xl px-6 pb-6">
-        <BrokerCard />
-      </div>
-
-      <footer className="relative z-10 mx-auto max-w-2xl px-6 pb-8 pt-4 text-center text-xs text-white/40">
+      <p className="relative z-10 mx-auto max-w-2xl px-6 pt-4 text-center text-xs text-white/40">
         {calculatorConfig.brokerName} — {calculatorConfig.brokerAddress}
+      </p>
+
+      {/* Coordonnées tout à la fin de la page */}
+      <footer className="relative z-10 mx-auto max-w-2xl px-6 pb-8 pt-6">
+        <BrokerCard />
       </footer>
 
       {/* Décoration : lignes rouges courbées en bas de l'écran */}

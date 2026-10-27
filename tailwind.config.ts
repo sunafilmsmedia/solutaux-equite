@@ -16,7 +16,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Montserrat", "system-ui", "sans-serif"],
-        display: ["Grained", "serif"],
       },
       boxShadow: {
         card: "0 10px 40px -12px rgba(0, 0, 0, 0.6)",
