@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --ink: #050b18;
+  --neon: #b91c1c;
+}
+
+html,
+body {
+  background: var(--ink);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  /* Dégradé animé "propulsé par l'IA" — palette bleue/blanche */
+  .ai-gradient-text {
+    background: linear-gradient(90deg, #1e3a73, #3b6fd9, #ffffff, #1e3a73);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    @apply animate-gradientMove;
+  }
+
+  /* Mot vedette "économiser" — gothique (Pirata One) */
+  .neon-word {
+    font-family: "Pirata One", serif;
+    font-weight: 400;
+    color: var(--neon);
+    text-shadow: 0 0 10px rgba(185, 28, 28, 0.4), 0 0 24px rgba(185, 28, 28, 0.2);
+  }
+
+  /* Curseur (Q3 valeur de propriété, Q4 solde hypothécaire, Q5 marge). */
+  .brand-range {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    border-radius: 9999px;
+    background: linear-gradient(
+      90deg,
+      #3b6fd9 0%,
+      #3b6fd9 var(--range-progress, 0%),
+      rgba(255, 255, 255, 0.1) var(--range-progress, 0%),
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    outline: none;
+  }
+  .brand-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 3px solid #1e3a73;
+    box-shadow: 0 0 0 4px rgba(59, 111, 217, 0.25);
+    cursor: pointer;
+  }
+  .brand-range::-moz-range-thumb {
+    height: 26px;
+    width: 26px;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 3px solid #1e3a73;
+    box-shadow: 0 0 0 4px rgba(59, 111, 217, 0.25);
+    cursor: pointer;
+  }
+  .brand-range::-moz-range-progress {
+    background: #3b6fd9;
+    height: 8px;
+    border-radius: 9999px;
+  }
+}
