@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 // Meta (Facebook) Pixel — per-déploiement, à compléter avec l'ID du client.
-const META_PIXEL_ID = "";
+const META_PIXEL_ID = "1962067708511488";
 
 // Microsoft Clarity — per-déploiement, à compléter avec l'ID du client.
 const CLARITY_ID = "";
