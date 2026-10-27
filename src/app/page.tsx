@@ -13,9 +13,8 @@ export default function LandingPage() {
         </span>
       </header>
 
-      <div className="mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-10 lg:flex-row lg:items-center lg:py-16">
-        {/* Colonne gauche */}
-        <div className="flex-1 animate-fadeUp text-center">
+      <div className="mx-auto max-w-2xl px-6 py-10 text-center lg:py-16">
+        <div className="animate-fadeUp">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-slate-200">
             <span className="h-2 w-2 rounded-full bg-savings" />
             Gratuit • Sans engagement • Aucun impact sur ton crédit
@@ -48,14 +47,14 @@ export default function LandingPage() {
             Gratuit. Sans engagement. Aucun impact sur ton crédit.
           </p>
         </div>
-
-        {/* Colonne droite */}
-        <div className="flex w-full flex-col gap-4 lg:w-[40%]">
-          <BrokerCard />
-        </div>
       </div>
 
-      <footer className="relative z-10 mx-auto max-w-[1280px] px-6 pb-8 pt-4 text-center text-xs text-white/40 lg:text-left">
+      {/* Coordonnées en bas, comme une landing page normale */}
+      <div className="relative z-10 mx-auto max-w-2xl px-6 pb-6">
+        <BrokerCard />
+      </div>
+
+      <footer className="relative z-10 mx-auto max-w-2xl px-6 pb-8 pt-4 text-center text-xs text-white/40">
         {calculatorConfig.brokerName} — {calculatorConfig.brokerAddress}
       </footer>
 
