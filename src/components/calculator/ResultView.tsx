@@ -100,13 +100,8 @@ export default function ResultView({ leadId }: { leadId: string }) {
           valeur de votre propriété, les taux disponibles et les critères des prêteurs.
         </p>
 
-        {/* Carte courtier */}
-        <div className="mt-8">
-          <BrokerCard />
-        </div>
-
         {/* CTA */}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
             href={calculatorConfig.calendarLink}
             target="_blank"
@@ -121,6 +116,11 @@ export default function ResultView({ leadId }: { leadId: string }) {
           >
             Recevoir mon estimation par courriel
           </Link>
+        </div>
+
+        {/* Carte courtier — tout à la fin */}
+        <div className="mt-6">
+          <BrokerCard />
         </div>
       </div>
     </main>
