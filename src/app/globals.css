@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Pirata+One&family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "Grained";
+  src: url("/fonts/Grained-Demo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --ink: #050b18;
@@ -28,9 +36,9 @@ body {
     @apply animate-gradientMove;
   }
 
-  /* Mot vedette "économiser" — gothique (Pirata One) */
+  /* Mot vedette "aller chercher" — texturé (Grained Regular) */
   .neon-word {
-    font-family: "Pirata One", serif;
+    font-family: "Grained", serif;
     font-weight: 400;
     color: var(--neon);
     text-shadow: 0 0 10px rgba(185, 28, 28, 0.4), 0 0 24px rgba(185, 28, 28, 0.2);
