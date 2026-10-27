@@ -1,4 +1,3 @@
-import BrokerCard from "@/components/ui/BrokerCard";
 import TrackedLink from "@/components/ui/TrackedLink";
 import { calculatorConfig } from "@/lib/config";
 
@@ -47,13 +46,8 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <p className="relative z-10 mx-auto max-w-2xl px-6 pt-4 text-center text-xs text-white/40">
+      <footer className="relative z-10 mx-auto max-w-2xl px-6 pb-8 pt-4 text-center text-xs text-white/40">
         {calculatorConfig.brokerName} — {calculatorConfig.brokerAddress}
-      </p>
-
-      {/* Coordonnées tout à la fin de la page */}
-      <footer className="relative z-10 mx-auto max-w-2xl px-6 pb-8 pt-6">
-        <BrokerCard />
       </footer>
 
       {/* Décoration : lignes rouges courbées en bas de l'écran */}
