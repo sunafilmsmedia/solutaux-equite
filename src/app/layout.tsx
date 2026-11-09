@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const META_PIXEL_ID = "1962067708511488";
 
 // Microsoft Clarity — per-déploiement, à compléter avec l'ID du client.
-const CLARITY_ID = "";
+const CLARITY_ID = "zb6r4fs0io";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
