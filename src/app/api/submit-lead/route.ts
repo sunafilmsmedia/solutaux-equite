@@ -3,6 +3,7 @@ import { randomUUID } from "crypto";
 import { calculatorInputSchema } from "@/lib/validation";
 import { processLead } from "@/lib/engine";
 import { buildCrmPayload, sendToCrm } from "@/lib/crm";
+import { sendCapiLead } from "@/lib/metaCapi";
 import type { CalculatorInput } from "@/types/calculator";
 
 export async function POST(request: Request) {
@@ -37,7 +38,33 @@ export async function POST(request: Request) {
     // Tous les niveaux (A à D) sont envoyés au CRM — même un dossier non
     // qualifié (D) entre dans une séquence de nurture plutôt qu'un appel.
     const crmPayload = buildCrmPayload(input, result);
-    const crm = await sendToCrm(crmPayload);
+    const meta = ((body as { meta?: Record<string, unknown> }).meta ?? {}) as {
+      fbp?: string;
+      fbc?: string;
+      sourceUrl?: string;
+    };
+    const str = (v: unknown) => (typeof v === "string" && v ? v : undefined);
+
+    // CRM et Meta CAPI en parallèle. event_id = leadId, le même que le
+    // pixel navigateur utilise sur la page résultat → pas de doublon.
+    const [crm] = await Promise.all([
+      sendToCrm(crmPayload),
+      sendCapiLead({
+        eventId: leadId,
+        email: input.email,
+        phone: input.phone,
+        firstName: input.firstName,
+        fbp: str(meta.fbp),
+        fbc: str(meta.fbc),
+        clientIp: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || undefined,
+        userAgent: request.headers.get("user-agent") || undefined,
+        sourceUrl: str(meta.sourceUrl),
+        customData: {
+          content_name: "Combien puis-je aller chercher",
+          lead_tier: result.tier,
+        },
+      }),
+    ]);
     if (!crm.ok) {
       console.error(crm.error);
     }

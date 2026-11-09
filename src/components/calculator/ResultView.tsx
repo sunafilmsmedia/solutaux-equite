@@ -25,7 +25,8 @@ export default function ResultView({ leadId }: { leadId: string }) {
       // La personne a complété le questionnaire → événement Lead.
       const firedKey = `lead-fired:${leadId}`;
       if (!sessionStorage.getItem(firedKey)) {
-        trackPixel("Lead");
+        // Même event_id que le Lead envoyé côté serveur (CAPI) → dédupliqué par Meta.
+        trackPixel("Lead", {}, leadId);
         sessionStorage.setItem(firedKey, "1");
       }
     }

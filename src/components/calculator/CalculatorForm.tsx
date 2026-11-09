@@ -18,6 +18,7 @@ import {
   type ChoiceOption,
 } from "./questions";
 import { calculatorConfig } from "@/lib/config";
+import { readCookie } from "@/lib/pixel";
 
 type StepKey =
   | "propertyType"
@@ -101,7 +102,15 @@ export default function CalculatorForm() {
       const res = await fetch("/api/submit-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          ...payload,
+          // Données Meta pour le Lead serveur (CAPI) — hors validation Zod.
+          meta: {
+            fbp: readCookie("_fbp"),
+            fbc: readCookie("_fbc"),
+            sourceUrl: window.location.href,
+          },
+        }),
       });
       const data = await res.json();
 
